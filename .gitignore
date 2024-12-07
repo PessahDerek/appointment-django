@@ -1,0 +1,7 @@
+.venv
+.idea
+identifier.sqlite
+app/**/migrations/*.py
+app/node_modules/**
+#Allow only __init__.py
+!app/**/migrations/__init__.py

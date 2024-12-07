@@ -1,0 +1,15 @@
+{% load static %}
+<nav class="w-full h-[70px] z-40 flex sticky top-0 bg-blue-500 text-white">
+    <div class="w-[90%] m-auto flex justify-between items-center">
+        <a class="fancy-text text-[3vmax]" href="/">Dr.Schedule</a>
+        <div class="flex gap-2">
+            <a class="flex gap-2 bg-blue-900 p-2 rounded-full pl-3 pr-3" href="/about">
+                About
+            </a>
+            <a class="primary-btn-link" href="/signup">
+                Login
+                <img src="{% static 'icons/account.svg' %}" alt="">
+            </a>
+        </div>
+    </div>
+</nav>

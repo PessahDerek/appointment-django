@@ -1,0 +1,29 @@
+{% extends "core.html" %}
+{% load static %}
+
+{% block extra_head %}
+    <title>Schedule</title>
+{% endblock %}
+{% block content %}
+    <body class="bg-slate-100 min-h-[100vh] space-y-2">
+    {% include 'components/home-navbar.html' %}
+    <div class="w-[90%] m-auto h-max flex flex-wrap gap-4 text-gray-800">
+        <img class="min-w-[300px] md:w-1/2 h-full rounded-bl-[200px] rounded-tr-[200px] rounded-xl top-0 z-0 object-cover object-center"
+             src="{% static 'images/landing.jpg' %}"
+             alt="landing page image"/>
+        <div class="flex-1 h-max grid gap-2 m-auto">
+            <h1 class="bg-gradient-to-r from-gray-700 to-blue-400 text-transparent bg-clip-text text-6xl font-black ">
+                Never miss an appointment
+            </h1>
+            <ol class="list-disc list-inside">
+                <li>Doctor working hours</li>
+                <li>Easy cancellation communication</li>
+                <li>Seamless rescheduling</li>
+            </ol>
+            <button class="primary-btn">
+                Get started
+            </button>
+        </div>
+    </div>
+    </body>
+{% endblock %}

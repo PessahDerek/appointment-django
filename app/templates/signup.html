@@ -1,0 +1,31 @@
+{% extends 'core.html' %}
+{% load static %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/output.css' %}" ></link>
+    <link rel="stylesheet" href="{% static 'css/global.css' %}" ></link>
+    <title>Authentication</title>
+{% endblock %}
+{% block content %}
+    <body>
+    {% include 'components/home-navbar.html' %}
+    <div class="w-[90%] min-h-[calc(100vh-70px)] m-auto grid gap-2">
+        {% if form.errors %}
+            <div class="error-banner">
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <p class="m-auto">{{ error }}</p>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        {% endif %}
+        <form method="post" action="{% url 'signup' %}" class="bg-white grid gap-2 p-3 m-auto">
+            {% csrf_token %}
+            <h1 class="text-xl font-bold text-gray-900">Signup</h1>
+            {{ form.as_p }}
+            <button class="primary-btn">
+                Submit
+            </button>
+        </form>
+    </div>
+    </body>
+{% endblock %}
